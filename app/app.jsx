@@ -4,14 +4,16 @@ var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 var Main = require('Main');
 var Weather = require('Weather');
 var About = require('About');
-var Panda = require('Panda') // added extra page for practice
 var Examples = require('Examples');
+
+// Load foundation
+require('style!css!foundation-sites/dist/foundation.min.css')
+$(document).foundation();
 
 ReactDOM.render(
     <Router history={hashHistory}>
         <Route path="/" component={Main}>
             <Route path="about" component={About}/>
-            <Route path="panda" component={Panda}/>
             <Route path="examples" component={Examples}/>
             <IndexRoute component={Weather}/>
         </Route>
